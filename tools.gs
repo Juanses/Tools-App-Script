@@ -11,6 +11,13 @@ function dateToYMD(date,separator) {
   return (y + separator + (m<=9 ? '0' + m : m) + separator + (d <= 9 ? '0' + d : d));
 }
 
+function datetoDMY(date,separator){
+  var dd = date.getDate();
+  var mm = date.getMonth()+1; //January is 0!
+  var yyyy = date.getFullYear();
+  return (dd<10 ? '0'+dd : dd)+ separator + (mm<10 ? '0'+mm : mm) + separator + yyyy;
+}
+
 //Generate random alphanumeric
 function generaterandom(){
   var text = "";
@@ -23,4 +30,9 @@ function generaterandom(){
 //Unique values in Array
 function onlyUnique(value, index, self) { 
   return self.indexOf(value) === index;
+}
+
+function toTitleCase(str)
+{
+  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
