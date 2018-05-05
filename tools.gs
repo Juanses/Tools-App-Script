@@ -12,10 +12,19 @@ function dateToYMD(date,separator) {
 }
 
 function datetoDMY(date,separator){
-  var dd = date.getDate();
-  var mm = date.getMonth()+1; //January is 0!
-  var yyyy = date.getFullYear();
-  return (dd<10 ? '0'+dd : dd)+ separator + (mm<10 ? '0'+mm : mm) + separator + yyyy;
+  if (!isNaN(date)) {
+    var dd = date.getDate();
+    var mm = date.getMonth()+1; //January is 0!
+    var yyyy = date.getFullYear();
+    return (dd<10 ? '0'+dd : dd)+ separator + (mm<10 ? '0'+mm : mm) + separator + yyyy;
+  }
+  else{
+    return false
+  }
+}
+
+function generatepassword(longeur){
+ return Math.random().toString(36).substr(2, longeur);
 }
 
 //Generate random alphanumeric
