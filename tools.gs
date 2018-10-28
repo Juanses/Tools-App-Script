@@ -3,6 +3,11 @@ String.prototype.toProperCase = function () {
   return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };
 
+//days in a month
+function daysInMonth (month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
 //Change date
 function dateToYMD(date,separator) {
   var d = date.getDate();
